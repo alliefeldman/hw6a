@@ -20,11 +20,16 @@ function establishEmptyCart(){
 }
 
 function showCartSize() {
-    let cart = localStorage.getItem("cart").split(",");
+    try {
+        let cart = localStorage.getItem("cart").split(",");
+    }
+    catch (error) {
+        establishEmptyCart()
+    }
     let cart_div = document.getElementById("cart");
-    document.getElementById("cart").innerHTML = `<img src="media/cart.png", width="65px">`;
+    document.getElementById("cart").innerHTML = `<img src="media/cart.png", width="65">`;
 
-    if(cart.length != 1 ){
+    if(cart.length >= 1 ){
         let cartSize = document.createElement("h4");
         cartSize.setAttribute("id","cart_size");
         cartSize.innerText = cart.length - 1;
