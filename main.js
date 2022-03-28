@@ -1,5 +1,5 @@
 var product_list = {
-    //id name   : ["official name", price, img_src, description]
+    //this used to be a dictionary of lists, I changed it to a dictionary of dictionaries
     "foundation": {"official_name": "Foundation", "full_price": 24.99, "img_src": "media/foundation.jpeg", "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non odio euismod lacinia at quis risus sed vulputate odio. Rhoncus urna neque viverra justo nec ultrices dui. Hendrerit gravida rutrum quisque non. Tellus in metus vulputate eu scelerisque felis imperdiet proin. ", "colors": [""], "rating": 4.5},
     "concealer":  {"official_name": "Concealer", "full_price": 15.98, "img_src": "media/concealer.jpeg", "description": "this concealer is like... literally the best thing ever. I would DIE if this were to be discontinued."},
     "bronzer":    {"official_name": "Bronzer", "full_price": 16.61, "img_src": "media/bronzer.jpeg", "description": "my face be bronzed to da gods, it's like blush but it's NOT"},
