@@ -22,17 +22,21 @@ function establishEmptyCart(){
 function showCartSize() {
     try {
         let cart = localStorage.getItem("cart").split(",");
+        console.log("che");
     }
     catch (error) {
-        establishEmptyCart()
+        console.log("WJAT");
+        establishEmptyCart();
+        let cart = localStorage.getItem("cart").split(",");
     }
     let cart_div = document.getElementById("cart");
     document.getElementById("cart").innerHTML = `<img src="media/cart.png", width="65">`;
-
+    console.log(cart);
     if(cart.length >= 1 ){
         let cartSize = document.createElement("h4");
         cartSize.setAttribute("id","cart_size");
         cartSize.innerText = cart.length - 1;
+        console.log("hi");
         cart_div.appendChild(cartSize);
     }
 }
@@ -69,11 +73,9 @@ function updateProductPage() {
 function addToCart() {
     let cart = localStorage.getItem("cart").split(",");
     var active_product = localStorage.getItem("active_product");
-    console.log(active_product);
     /* Cart item list: official_name, img_src, price, purchase_plan, color*/
     let cart_item = `${product_list[active_product]["official_name"]}+${product_list[active_product]["img_src"]}+${product_list[active_product]["full_price"]}+${"one-time"}+${"#dabe8b"}`;
     cart.push(cart_item);
-
     showCartSize();
     localStorage.setItem("cart", cart);
 }
